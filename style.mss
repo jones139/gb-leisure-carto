@@ -161,11 +161,7 @@ Map {
   [bridge='yes'] {
 		   line-color: blue;
 		   text-face-name:'Liberation Sans Regular';
-  		   //text-halo-fill: white; //fadeout(white,40%);
   		   text-size:8pt;
-  		   //text-halo-radius:1.5;
-  		   //text-fill: black; //#777;
-  		   //text-opacity:0.3;
     		   text-dy: -3;
 		   text-dx: 3;
 		   text-name:"'FB'";
@@ -173,11 +169,30 @@ Map {
 }
 
 #boundaries {
+  text-face-name:'Liberation Sans Regular';
+  text-size:8pt;
+  text-dy: -3;
+  text-dx: 3;
+  text-name:"''";
   [barrier='fence'] { line-color:#b83; line-width:0.5; }  		    
   [barrier='hedge'] { line-color:#7b7; line-width:1; }
   [barrier='wall'] { line-color:#999; line-width:1; }
-  //[barrier='gate'],[barrier='kissing gate'] { text-name:"'Gate'"; }
-  //[barrier='stile'] { text-name:"'Stile'"; }
+  [barrier='gate'],[barrier='kissing gate'] { text-name:"'Gate'"; }
+  [barrier='stile'] { text-name:"'Stile'"; }
+}
+
+#barriers {
+  text-face-name:'Liberation Sans Regular';
+  text-size:8pt;
+  text-dy: -3;
+  text-dx: 3;
+  text-name:"''";
+  [barrier='gate'],[barrier='kissing gate'] {
+  				     //text-name:"'Gate'";
+				     point-file:url('icons/barrier_gate.n.16.png');
+				     }
+  [barrier='stile'] { //text-name:"'Stile'";
+  		    point-file:url('icons/barrier_stile.n.16.png');}
 }
 
 #contours {
