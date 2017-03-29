@@ -209,7 +209,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\nselect way, highway, designation, foot, access\nfrom planet_osm_line\nwhere highway in ('footway','bridleway','cycleway','path') or\ndesignation in ('public_footpath','public_bridleway',\n'restricted_byway','byway_open_to_all_traffic')\n)\nas rightsofway",
+        "table": "(\nselect way, highway, designation, foot, access, bridge\nfrom planet_osm_line\nwhere highway in ('footway','bridleway','cycleway','path') or\ndesignation in ('public_footpath','public_bridleway',\n'restricted_byway','byway_open_to_all_traffic')\n)\nas rightsofway",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "dynamic",
@@ -237,7 +237,7 @@
       "id": "contours",
       "class": "",
       "Datasource": {
-        "file": "/home/greg/Documents/openstreetmap/data/so-contours/SO65_line.shp",
+        "file": "/home/graham/osm/styles/terr50_cesh_gb/nz/nz43/NZ43_line.shp",
         "type": "shape"
       },
       "layer": null,
@@ -284,7 +284,7 @@
       "id": "grid",
       "class": "",
       "Datasource": {
-        "file": "/home/greg/Documents/openstreetmap/data/OSGB_Grids/Shapefile/OSGB_Grid_1km.shp",
+        "file": "/home/graham/osm/styles/OSGB_Grids/Shapefile/OSGB_Grid_1km.shp",
         "id": "grid",
         "project": "gb-leisure",
         "srs": "",

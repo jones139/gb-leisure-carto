@@ -15,15 +15,15 @@ stylesheet = 'gb-leisure.xml'
 image = 'gb-leisure.png'
 
 # set geometry options
-left_E = 363500 # set to OSGB Easting of left edge
-bottom_N = 254000 # set to OSGB Northing of bottom edge
-paper_width = 0.21 # set paper width in metres, A4 = 0.210
-paper_height = 0.21 # set paper height in metres, A4 = 0.297
+left_E = 444169 # set to OSGB Easting of left edge
+bottom_N = 534280 # set to OSGB Northing of bottom edge
+paper_width = 0.594 # set paper width in metres, A4 = 0.210
+paper_height = 0.420 # set paper height in metres, A4 = 0.297
 margin = 0.01 # set margin in metres e.g. 0.01m = 1cm
-scale = 25000 # set scale e.g. 25000
+scale = 12500 # set scale e.g. 25000
 
 # set output resolution (mapnik default is 90.71)
-resolution = 90.71 # change to desired output resolution e.g. 300
+resolution = 300 # change to desired output resolution e.g. 300
 
 # ----- SET OPTIONS ABOVE THIS LINE -----
 

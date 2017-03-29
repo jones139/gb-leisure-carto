@@ -1,5 +1,8 @@
 // https://github.com/gregrs-uk/gb-leisure-carto/
 
+
+
+
 Map {
   background-color: white;
 }
@@ -136,18 +139,18 @@ Map {
   line-dasharray:4,2;
   line-cap:butt;
   line-join:bevel;
+
+
   // probably public rights of way but no designation set
   [foot='designated'],[access='designated'],
   [foot='permissive'],[access='permissive'],
-  [foot='yes'],[access='yes'] {
+  [foot='yes'],[access='yes'],[designation='public_footpath'],[highway='footway'] {
+    line-dasharray:4,2;
     line-color: #3b3;
   }
-  // override colour if designation is explicitly set
-  [designation='public_footpath'] {
-    line-color: #f70;
-  }
-  [designation='public_bridleway'] {
-    line-color: #66f;
+  [designation='public_bridleway'],[highway='bridleway'],[highway='cycleway'] {
+    line-dasharray:8,2;
+    line-color: #3b3;
   }
   [designation='restricted_byway'] {
     line-color: purple;
@@ -155,18 +158,31 @@ Map {
   [designation='byway_open_to_all_traffic'] {
     line-color: red;
   }
+  [bridge='yes'] {
+		   line-color: blue;
+		   text-face-name:'Liberation Sans Regular';
+  		   //text-halo-fill: white; //fadeout(white,40%);
+  		   text-size:8pt;
+  		   //text-halo-radius:1.5;
+  		   //text-fill: black; //#777;
+  		   //text-opacity:0.3;
+    		   text-dy: -3;
+		   text-dx: 3;
+		   text-name:"'FB'";
+		 }
 }
 
 #boundaries {
-  line-width:0.5;
-  [barrier='fence'] { line-color:#b83; }
-  [barrier='hedge'] { line-color:#7b7; }
-  [barrier='wall'] { line-color:#999; }
+  [barrier='fence'] { line-color:#b83; line-width:0.5; }  		    
+  [barrier='hedge'] { line-color:#7b7; line-width:1; }
+  [barrier='wall'] { line-color:#999; line-width:1; }
+  //[barrier='gate'],[barrier='kissing gate'] { text-name:"'Gate'"; }
+  //[barrier='stile'] { text-name:"'Stile'"; }
 }
 
 #contours {
   line-width:0.5;
-  line-color:#f0f;
+  line-color:#aa0;
   line-opacity:0.6;
   line-cap:butt;
   line-dasharray:1,1;
@@ -174,7 +190,7 @@ Map {
 
 #labels {
   text-name:[name];
-  text-face-name:'Arial Regular';
+  text-face-name:'Liberation Sans Regular';
   text-halo-fill: white; //fadeout(white,40%);
   text-size:8pt;
   text-halo-radius:1.5;
