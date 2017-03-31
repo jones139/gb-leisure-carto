@@ -3,12 +3,16 @@ Readme
 GB Leisure is a [CartoCSS](http://wiki.openstreetmap.org/wiki/CartoCSS) style intended for use with [OpenStreetMap](http://www.openstreetmap.org) data, OS OpenData [Terrain 50 contour shapefiles](http://www.ordnancesurvey.co.uk/business-and-government/products/terrain-50.html) and Charles Roper's [OSGB 1km grid shapefile](https://github.com/charlesroper/OSGB_Grids).
 
 ![Map sample](gb-leisure.png)
+![Mono Map Sample](gb-leisure-mono.png)
 
 The style is still very much a work in progress and is currently missing a number of important features. However, the aim is to produce a map style that can be used for outdoor activities (walking, hiking, mountain biking, etc.) in Great Britain that shows features relevant to these activities (including public rights of way defined in the [OpenStreetMap](http://www.openstreetmap.org) database by the [designation](https://wiki.openstreetmap.org/wiki/Designation) tag) and uses the [Ordnance Survey (OSGB 1936) projection (EPSG:27700) and British National Grid](http://en.wikipedia.org/wiki/Ordnance_Survey_National_Grid).
 
 Files
 -----
 - The project.mml and style.mss files were created using TileMill
+- project-mono.mml and style-mono.mss are a monochrome version intended for
+  black and white printing, or use as a background to show routes in colour
+  etc.
 - The generate-xml.sh BASH script uses carto to generate a Mapnik XML file and sed to replace the TileMill default projection with the OSGB one
 - The print-osgb.py Python script uses Mapnik to render a map which uses the OSGB projection using a given paper size, scale and origin (specified using an OS all-numeric grid reference). It could also be used to render alternative Mapnik styles in a similar fashion
 

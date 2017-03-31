@@ -4,8 +4,8 @@
 
 
 @residential: #f0f0f0;
-@water: #d0d0d0;
-@water_outline: #a0a0a0;
+@water: #808080;
+@water_outline: #505050;
 @wood: #e0e0e0;
 @building: #707070;
 
@@ -21,11 +21,11 @@
 
 @path_colour:#202020;
 
-@contour_colour: #303030;
+@contour_colour: #202020;
 @contour_width:1;
 @grid_colour: #101010;
 @grid_width:1;
-@boundary_colour:#a0a0a0;
+@boundary_colour:#101010;
 
 Map {
   background-color: white;
@@ -238,7 +238,7 @@ Map {
 #contours {
   line-width:@contour_width;
   line-color:@contour_colour;
-  line-opacity:0.6;
+  //line-opacity:0.6;
   line-cap:butt;
   line-dasharray:1,3;
 }
@@ -250,7 +250,7 @@ Map {
   text-size:8pt;
   text-halo-radius:1.5;
   text-fill: black; //#777;
-  text-opacity:0.3;
+  text-opacity:0.7;
   [place='city'] {
     text-size:35pt;
   }
