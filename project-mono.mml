@@ -131,30 +131,6 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\nselect way, barrier\nfrom planet_osm_point)\nas barriers",
-        "key_field": "",
-        "geometry_field": "",
-        "extent_cache": "dynamic",
-        "extent": "",
-        "dbname": "gis"
-      },
-      "id": "barriers",
-      "class": "",
-      "srs-name": "custom",
-      "srs": "+init=epsg:3857",
-      "advanced": {},
-      "name": "barriers"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        -3.2290317,
-        51.799255,
-        -2.2551373,
-        52.4054663
-      ],
-      "Datasource": {
-        "type": "postgis",
         "table": "(\nselect way, highway, tracktype, z_order\nfrom planet_osm_line\nwhere highway in ('motorway','motorway_link',\n'trunk','trunk_link','primary','primary_link',\n'secondary','secondary_link','tertiary','tertiary_link',\n'unclassified','residential','service','track')\norder by z_order\n)\nas highway",
         "key_field": "",
         "geometry_field": "",
@@ -251,6 +227,31 @@
       "name": "paths"
     },
     {
+      "geometry": "linestring",
+      "extent": [
+        -3.2290317,
+        51.799255,
+        -2.2551373,
+        52.4054663
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nselect way, barrier\nfrom planet_osm_point)\nas barriers",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "dynamic",
+        "extent": "",
+        "dbname": "gis"
+      },
+      "id": "barriers",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:3857",
+      "advanced": {},
+      "name": "barriers"
+    },
+
+{
       "geometry": "linestring",
       "extent": [
         -2.585976822676941,

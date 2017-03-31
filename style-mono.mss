@@ -4,8 +4,9 @@
 
 
 @residential: #f0f0f0;
-@water: #505050;
-@wood: #a0a0a0;
+@water: #d0d0d0;
+@water_outline: #a0a0a0;
+@wood: #e0e0e0;
 @building: #707070;
 
 @road_casing_colour: #000000;
@@ -17,10 +18,13 @@
 @secondary_colour:#e0e0e0;
 @minor_width: 2;
 @outer_width: 1;
-@path_colour:#a0a0a0;
 
-@contour_colour: #c0c0c0;
-@grid_colour: #c0c0c0;
+@path_colour:#707070;
+
+@contour_colour: #303030;
+@contour_width:1;
+@grid_colour: #101010;
+@grid_width:1;
 @boundary_colour:#202020;
 
 Map {
@@ -32,6 +36,7 @@ Map {
   [natural='wood'],
   [landuse='forest'] {
     polygon-fill: @wood;
+    polygon-pattern-file: url('icons/Trees.png');
   }
   [landuse='residential'], [landuse='industrial'],
   [landuse='retail'], [landuse='commercial'],
@@ -43,8 +48,9 @@ Map {
 #water {
   // natural=water and waterway=riverbank
   polygon-fill: @water;
+  polygon-pattern-file: url('icons/Water.png');
   line-width:1;
-  line-color: @water;
+  line-color: @water_outline;
 }
 
 #waterways {
@@ -206,14 +212,14 @@ Map {
   text-name:"''";
   [barrier='gate'],[barrier='kissing gate'] {
   				     //text-name:"'Gate'";
-				     point-file:url('icons/barrier_gate.n.16.png');
+				     point-file:url('icons/Gate.png');
 				     }
   [barrier='stile'] { //text-name:"'Stile'";
-  		    point-file:url('icons/barrier_stile.n.16.png');}
+  		    point-file:url('icons/Stile.png');}
 }
 
 #contours {
-  line-width:0.5;
+  line-width:@contour_width;
   line-color:@contour_colour;
   line-opacity:0.6;
   line-cap:butt;
@@ -258,6 +264,6 @@ Map {
 
 #grid {
   line-color:@grid_colour;
-  line-width:0.5;
+  line-width:@grid_width;
   line-opacity:0.25;
 }
