@@ -2,22 +2,38 @@
 
 # https://github.com/gregrs-uk/gb-leisure-carto/
 
-if [ -f gb-leisure.xml ]
+COLOUR_FNAME=gb-leisure.xml
+COLOUR_MML=project.mml
+MONO_FNAME=gb-leisure-mono.xml
+MONO_MML=project-mono.mml
+
+if [ -f $COLOUR_FNAME ]
 then
-mv gb-leisure.xml gb-leisure-old.xml
+    mv $COLOUR_FNAME ${COLOUR_FNAME}.xml
 fi
 
-echo "Generating gb-leisure.xml from project.mml"
-carto project.mml > gb-leisure.xml &&
-if [ -f gb-leisure-old.xml ]
+if [ -f $MONO_FNAME ]
 then
-rm gb-leisure-old.xml
+    mv $MONO_FNAME ${MONO_FNAME}.xml
 fi
+
+echo "Generating Colour stylesheet"
+carto ${COLOUR_MML} > ${COLOUR_FNAME} &&
+#if [ -f gb-leisure-old.xml ]
+#then
+#rm gb-leisure-old.xml
+#fi
 
 echo "Replacing SRS with OSGB one"
-sed -i 's/srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"/srs="+init=epsg:27700"/g' gb-leisure.xml &&
+sed -i 's/srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"/srs="+init=epsg:27700"/g' ${COLOUR_FNAME} &&
 echo "Done"
 
-#echo "Replacing Arial Font with FreeSans"
-#sed -i 's/Arial Regular/FreeSans/g' gb-leisure.xml &&
-#echo "Done"
+echo "Generating Mono stylesheet"
+carto $MONO_MML > $MONO_FNAME &&
+
+
+echo "Replacing SRS with OSGB one"
+sed -i 's/srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"/srs="+init=epsg:27700"/g' $MONO_FNAME &&
+echo "Done"
+
+

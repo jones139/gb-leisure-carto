@@ -13,12 +13,14 @@ import mapnik
 # set some paths
 stylesheet = 'gb-leisure.xml'
 image = 'gb-leisure.png'
+stylesheet_mono = 'gb-leisure-mono.xml'
+image_mono = 'gb-leisure-mono.png'
 
 # set geometry options
 left_E = 444169 # set to OSGB Easting of left edge
 bottom_N = 534280 # set to OSGB Northing of bottom edge
-paper_width = 0.594 # set paper width in metres, A4 = 0.210
-paper_height = 0.420 # set paper height in metres, A4 = 0.297
+paper_width = 0.297 # set paper width in metres, A4 = 0.210
+paper_height = 0.210 # set paper height in metres, A4 = 0.297
 margin = 0.01 # set margin in metres e.g. 0.01m = 1cm
 scale = 12500 # set scale e.g. 25000
 
@@ -45,7 +47,7 @@ map_width_px = int(round((resolution/inch)*map_width))
 map_height_px = int(round((resolution/inch)*map_height))
 scale_factor = resolution / mapnik_resolution
 
-# make the map
+# make the colour map
 m = mapnik.Map(map_width_px,map_height_px)
 mapnik.load_map(m, stylesheet)
 m.zoom_to_box(mapnik.Box2d(left_E,bottom_N,right_E,top_N))
@@ -55,4 +57,16 @@ print "Mapnik scale: %f" % m.scale()
 print "= 1 in %f\n" % m.scale_denominator()
 
 mapnik.render_to_file(m, image, "png", scale_factor)
-print "Rendered map to image file\n"
+print "Rendered colour map to image file\n"
+
+# make the mono map
+m = mapnik.Map(map_width_px,map_height_px)
+mapnik.load_map(m, stylesheet_mono)
+m.zoom_to_box(mapnik.Box2d(left_E,bottom_N,right_E,top_N))
+
+print "Envelope: %s\n" % m.envelope()
+print "Mapnik scale: %f" % m.scale()
+print "= 1 in %f\n" % m.scale_denominator()
+
+mapnik.render_to_file(m, image_mono, "png", scale_factor)
+print "Rendered mono map to image file\n"
