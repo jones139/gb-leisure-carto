@@ -186,6 +186,17 @@ Map {
 		   text-dx: 3;
 		   text-name:"'FB'";
 		 }
+  [highway='steps'] {
+     ::line {
+       line-width: 3;
+       line-color: black;
+     }
+     ::dash {
+       line-color:white;
+       line-width:2;
+       line-dasharray: 2,1;
+     }
+  }
 }
 
 #boundaries {
