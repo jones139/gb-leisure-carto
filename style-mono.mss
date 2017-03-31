@@ -19,13 +19,13 @@
 @minor_width: 2;
 @outer_width: 1;
 
-@path_colour:#707070;
+@path_colour:#202020;
 
 @contour_colour: #303030;
 @contour_width:1;
 @grid_colour: #101010;
 @grid_width:1;
-@boundary_colour:#202020;
+@boundary_colour:#a0a0a0;
 
 Map {
   background-color: white;
