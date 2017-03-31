@@ -38,6 +38,10 @@ Map {
     polygon-fill: @wood;
     polygon-pattern-file: url('icons/Trees.png');
   }
+  [natural='scrub'] {
+    polygon-fill: @wood;
+    polygon-pattern-file: url('icons/Scrub.png');
+  }
   [landuse='residential'], [landuse='industrial'],
   [landuse='retail'], [landuse='commercial'],
   [landuse='farmyard'] {
@@ -257,7 +261,7 @@ Map {
     text-name:"'Ch'"
   }
   [amenity='pub'] {
-    text-name:"'Pub'"
+    text-name:"'PH'"
   }
   [landuse='farmyard'], [place='farm'] {
     text-dy: -13;

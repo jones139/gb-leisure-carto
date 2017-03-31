@@ -29,7 +29,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\nselect way, planet_osm_polygon.natural, landuse\nfrom planet_osm_polygon\nwhere planet_osm_polygon.natural in ('woodland','wood') or\nlanduse in ('forest','residential','industrial','retail','commercial','farmyard')\n)\nas landuse",
+        "table": "(\nselect way, planet_osm_polygon.natural, landuse\nfrom planet_osm_polygon\nwhere planet_osm_polygon.natural in ('woodland','wood','scrub') or\nlanduse in ('forest','residential','industrial','retail','commercial','farmyard')\n)\nas landuse",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "dynamic",
