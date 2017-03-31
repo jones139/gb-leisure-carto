@@ -42,6 +42,8 @@ Map {
   [landuse='retail'], [landuse='commercial'],
   [landuse='farmyard'] {
     polygon-fill: @residential;
+    line-color: @boundary_colour;
+    line-width: 0.5;
   }
 }
 
@@ -223,7 +225,7 @@ Map {
   line-color:@contour_colour;
   line-opacity:0.6;
   line-cap:butt;
-  line-dasharray:1,1;
+  line-dasharray:1,3;
 }
 
 #labels {
