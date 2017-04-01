@@ -268,8 +268,8 @@ Map {
   [amenity='school'] {
     text-name:"'Sch'"
   }
-  [amenity='place_of_worship'][religion='christian'] {
-    text-name:"'Ch'"
+  [amenity='place_of_worship'] {
+    point-file:url('icons/Church.png');
   }
   [amenity='pub'] {
     text-name:"'PH'"
