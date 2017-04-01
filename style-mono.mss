@@ -122,20 +122,67 @@ Map {
       line-width:@motorway_width;
       line-color:@motorway_colour;
     }
-    [highway='trunk'],[highway='trunk_link'],
-    [highway='primary'],[highway='primary_link'] {
+    [highway='trunk'],
+    [highway='primary'] {
       line-width:@primary_width;
       line-color:@primary_colour;
+      	 shield-name: "[ref]";
+      	 shield-size: 10;
+      	 shield-fill: #fff;
+      	 shield-placement: line;
+      	 shield-file: url("icons/pri_shield4.png");
+      	 shield-spacing: 750;
+      	 shield-min-distance: 30;
+      	 //shield-face-name: @bold-fonts;
+      	 shield-face-name:'Liberation Sans Regular';
+    }
+    [highway='trunk_link'],
+    [highway='primary_link'] {
+      line-width:@primary_width;
+      line-color:@primary_colour;
+      // no shields on link roads.
     }
     [highway='secondary'],[highway='secondary_link'] {
       line-width:@secondary_width;
       line-color:@secondary_colour;
-    }
+      text-face-name:'Liberation Sans Regular';
+      text-size:8pt;
+      text-name:[name];
+      text-placement: line;
+      text-halo-fill: white;
+      text-halo-radius:1.5;
+      	 shield-name: "[ref]";
+      	 shield-size: 10;
+      	 shield-fill: #fff;
+      	 shield-placement: line;
+      	 shield-file: url("icons/pri_shield4.png");
+      	 shield-spacing: 750;
+      	 shield-min-distance: 30;
+      	 //shield-face-name: @bold-fonts;
+      	 shield-face-name:'Liberation Sans Regular';
+      }
     [highway='tertiary'],[highway='tertiary_link'] {
       line-width:@secondary_width;
       line-color:@secondary_colour;
+      text-face-name:'Liberation Sans Regular';
+      text-size:8pt;
+      text-name:[name];
+      text-placement: line;
+      text-halo-fill: white;
+      text-halo-radius:1.5;
     }
-    [highway='unclassified'],[highway='residential'],
+    [highway='unclassified'] {
+      line-width:@minor_width;
+      text-face-name:'Liberation Sans Regular';
+      text-size:8pt;
+      text-name:[name];
+      text-placement: line;
+      text-halo-fill: white;
+      text-halo-radius:1.5;
+    }
+
+
+    [highway='residential'],
     [highway='service'],[highway='track'] {
       line-width:@minor_width;
     }
