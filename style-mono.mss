@@ -312,6 +312,7 @@ Map {
   text-halo-fill: white;
   text-halo-radius:1.5;
   text-name:[PROP_VALUE];
+  text-placement: line;
 }
 
 #labels {
