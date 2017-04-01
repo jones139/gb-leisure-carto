@@ -290,6 +290,8 @@ Map {
   line-dasharray:1,3;
   text-face-name:'Liberation Sans Regular';
   text-size:8pt;
+  text-halo-fill: white;
+  text-halo-radius:1.5;
   text-name:[PROP_VALUE];
 }
 
