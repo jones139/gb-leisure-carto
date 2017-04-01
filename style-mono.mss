@@ -21,6 +21,10 @@
 
 @path_colour:#202020;
 
+@power_line_colour: #000000;
+@power_line_width:1;
+@power_minor_line_width:0.5;
+
 @contour_colour: #202020;
 @contour_width:1;
 @grid_colour: #101010;
@@ -281,6 +285,21 @@ Map {
   [barrier='stile'] { //text-name:"'Stile'";
   		    point-file:url('icons/Stile.png');}
 }
+
+#power {
+  [power='line'] {
+     line-width:@power_line_width;
+     line-color:@power_line_colour;
+  }
+  [power='minor_line'] {
+     line-width:@power_minor_line_width;
+     line-color:@power_line_colour;
+  }
+  [power='tower'],[power='pole'] {
+     point-file:url('icons/power_tower_5x5.png');
+  }
+}
+
 
 #contours {
   line-width:@contour_width;
