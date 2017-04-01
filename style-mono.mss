@@ -241,6 +241,9 @@ Map {
   //line-opacity:0.6;
   line-cap:butt;
   line-dasharray:1,3;
+  text-face-name:'Liberation Sans Regular';
+  text-size:8pt;
+  text-name:[PROP_VALUE];
 }
 
 #labels {
