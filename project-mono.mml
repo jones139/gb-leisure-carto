@@ -261,7 +261,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(select way,power from planet_osm_line where \"power\" is not null union select way,power from planet_osm_point where \"power\" is not null) as power",
+        "table": "(select way,power,\"generator:source\",power_source from planet_osm_line where \"power\" is not null union select way,power,'generator:source',power_source from planet_osm_point where \"power\" is not null) as power",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "dynamic",
@@ -278,8 +278,30 @@
       "advanced": {},
       "name": "power"
     },
-
-
+    {
+      "geometry": "linestring",
+      "extent": [
+        -3.2290317,
+        51.799255,
+        -2.2551373,
+        52.4054663
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(select way,name,man_made from planet_osm_point where man_made is not null union select way,name,man_made from planet_osm_polygon where man_made is not null) as man_made",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "dynamic",
+        "extent": "",
+        "dbname": "gis"
+      },
+      "id": "man_made",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:3857",
+      "advanced": {},
+      "name": "man_made"
+    },
 {
       "geometry": "linestring",
       "extent": [
@@ -327,6 +349,32 @@
       "advanced": {},
       "name": "labels"
     },
+        {
+      "geometry": "polygon",
+      "extent": [
+        -7.55715989372837,
+        49.76680722270928,
+        2.7814598620646507,
+        60.822590112656144
+      ],
+      "id": "hillshade",
+      "class": "",
+      "Datasource": {
+        "file": "/home/graham/osm/styles/terr50_gagg_gb/nz/nz43/nz43.tif",
+        "id": "hillshade",
+        "project": "gb-leisure",
+        "srs": "",
+        "type": "gdal"
+      },
+      "layer": null,
+      "srs-name": "custom",
+      "srs": "+init=epsg:27700",
+      "advanced": {
+        "type": "gdal"
+      },
+      "name": "hillshade"
+    },
+
     {
       "geometry": "polygon",
       "extent": [

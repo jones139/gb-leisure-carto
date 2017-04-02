@@ -298,6 +298,20 @@ Map {
   [power='tower'],[power='pole'] {
      point-file:url('icons/power_tower_5x5.png');
   }
+  [power='generator'] {
+     ['generator:source'='wind'],[power_source='wind'] {
+	point-file:url('icons/Windmill-16.png');
+     }
+  }
+}
+
+#man_made {
+   [man_made='windmill'] {
+      //text-face-name:'Liberation Sans Regular';
+      //text-size:8pt;
+      //text-name:"'windmill'";
+      point-file:url('icons/Windmill-16.png');
+   }
 }
 
 
@@ -349,6 +363,11 @@ Map {
   [landuse='farmyard'], [place='farm'] {
     text-dy: -13;
   }
+}
+
+#hillshade {
+//	   raster-opacity: 1;
+//    	   raster-comp-op: multiply;
 }
 
 #grid {
