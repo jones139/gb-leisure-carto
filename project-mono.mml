@@ -107,6 +107,31 @@
       ],
       "Datasource": {
         "type": "postgis",
+        "table": "(select way,\"natural\",man_made,name from planet_osm_line where \"natural\" is not null union select way,\"natural\",man_made,name from planet_osm_line where man_made is not null) as natural_line",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "dynamic",
+        "extent": "",
+        "dbname": "gis"
+      },
+      "id": "natural_line",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:3857",
+      "advanced": {},
+      "name": "natural_line"
+    },
+
+    {
+      "geometry": "linestring",
+      "extent": [
+        -3.2290317,
+        51.799255,
+        -2.2551373,
+        52.4054663
+      ],
+      "Datasource": {
+        "type": "postgis",
         "table": "(\nselect way, barrier\nfrom planet_osm_line\nwhere barrier in ('fence','hedge','wall')\n)\nas boundaries",
         "key_field": "",
         "geometry_field": "",

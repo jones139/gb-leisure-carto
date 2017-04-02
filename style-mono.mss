@@ -84,6 +84,13 @@ Map {
   }
 }
 
+#natural_line {
+   [natural='cliff'],[man_made='embankment'] {
+       line-pattern-file: url('icons/cliff.png');
+   }
+
+}
+
 
 #roads {
   ::outer {
@@ -268,21 +275,14 @@ Map {
   		   line-color:@boundary_colour;
 		   line-width:1;
 		   }
-  //[barrier='gate'],[barrier='kissing gate'] { text-name:"'Gate'"; }
-  //[barrier='stile'] { text-name:"'Stile'"; }
 }
 
 #barriers {
-  text-face-name:'Liberation Sans Regular';
-  text-size:8pt;
-  text-dy: -3;
-  text-dx: 3;
-  text-name:"''";
   [barrier='gate'],[barrier='kissing gate'] {
-  				     //text-name:"'Gate'";
+  				     
 				     point-file:url('icons/Gate.png');
 				     }
-  [barrier='stile'] { //text-name:"'Stile'";
+  [barrier='stile'] { 
   		    point-file:url('icons/Stile.png');}
 }
 
