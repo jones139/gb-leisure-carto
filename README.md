@@ -36,6 +36,10 @@ Basic usage is as follows:
 - Set options in the generate-xml.sh script and run it to convert the CartoCSS files into a Mapnik XML file
 - Set options in the print-osgb.py script and run it to create a PNG image
 
-Licence
+Licences
 -------
+This is based on the work of Greg (gregrs-uk) (https://github.com/gregrs-uk/gb-leisure-carto/)
+
+It includes code samples and icons from Andy Townsend's OpenStreetmap Carto Style (https://github.com/SomeoneElseOSM/openstreetmap-carto-AJT).
+
 Feel free to use this code in your own projects (see LICENCE file for details) but please provide attribution and (where possible) a link to https://github.com/gregrs-uk/gb-leisure-carto/ in your code and alongside any map renders.
